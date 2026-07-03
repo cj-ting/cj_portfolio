@@ -31,10 +31,7 @@ function typeInto(anim, text, delay) {
   });
 }
 
-export async function init() {
-  if (reducedMotion()) return;
-  const nodes = document.querySelectorAll("[data-type], [data-type-out]");
-  if (!nodes.length) return;
+async function runGroup(nodes) {
   const jobs = [...nodes].map((el) => ({
     ...prepare(el),
     delay: el.hasAttribute("data-type") ? CMD_DELAY : OUT_DELAY,
@@ -43,4 +40,46 @@ export async function init() {
     await typeInto(job.anim, job.text, job.delay);
     await new Promise((r) => setTimeout(r, PAUSE));
   }
+}
+
+// A [data-type-trigger] container's typed lines run once when it scrolls
+// into view (below-the-fold terminals), hiding its output until the typed
+// command finishes so the file content doesn't just appear mid-type.
+async function runTrigger(container) {
+  container.classList.add("is-typing");
+  await runGroup(container.querySelectorAll("[data-type], [data-type-out]"));
+  container.classList.remove("is-typing");
+  container.classList.add("is-typed");
+}
+
+export function init() {
+  if (reducedMotion()) return;
+
+  const triggers = [...document.querySelectorAll("[data-type-trigger]")];
+  const deferred = new Set();
+  triggers.forEach((t) =>
+    t.querySelectorAll("[data-type], [data-type-out]").forEach((n) => deferred.add(n))
+  );
+
+  const immediate = [...document.querySelectorAll("[data-type], [data-type-out]")].filter(
+    (n) => !deferred.has(n)
+  );
+  if (immediate.length) runGroup(immediate);
+
+  if (!triggers.length) return;
+  if (!("IntersectionObserver" in window)) {
+    triggers.forEach(runTrigger);
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        io.unobserve(entry.target);
+        runTrigger(entry.target);
+      }
+    },
+    { threshold: 0.3 }
+  );
+  triggers.forEach((t) => io.observe(t));
 }

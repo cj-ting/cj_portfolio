@@ -67,7 +67,7 @@
           <div class="hero__trust">
             <p class="hero__trust-label">TRUSTED BY TOOLS I USE</p>
             <ul class="tool-strip">
-              <li><span class="tool-strip__mono">AWS</span></li>
+              <li><img src="assets/img/logos/aws.svg" alt="AWS" width="30" height="24"></li>
               <li><img src="assets/img/logos/terraform.svg" alt="Terraform" width="24" height="24"></li>
               <li><img src="assets/img/logos/kubernetes.svg" alt="Kubernetes" width="24" height="24"></li>
               <li><img src="assets/img/logos/docker.svg" alt="Docker" width="24" height="24"></li>
@@ -83,50 +83,61 @@
     <!-- ============ ABOUT ============ -->
     <section class="section" id="about">
       <div class="container">
-        <div class="about-card reveal">
-          <div class="about-card__col">
-            <h2 class="about-card__kicker">About Me</h2>
-            <p>DevOps &amp; SecOps engineer with 7+ years running secure Linux and Windows hybrid environments. At Slice Labs I've worn both hats — three years owning IT and security operations (SOC 2 readiness, SIEM monitoring, incident response), then moving to DevOps to manage AWS infrastructure, EKS access control, and CI/CD automation.</p>
-            <div class="about-card__stats">
-              <div class="stat">
-                <p class="stat__num"><span data-counter data-target="7">7</span>+</p>
-                <p class="stat__label">Years Experience</p>
+        <div class="term about-term reveal">
+          <div class="term__bar">
+            <span class="term__dot"></span><span class="term__dot"></span><span class="term__dot"></span>
+            <span class="term__title">cj@localhost:~</span>
+          </div>
+          <div class="term__body about-term__body" data-type-trigger>
+            <p class="term__line"><span class="term__prompt">cj@localhost:~$</span> <span class="term__cmd" data-type>cat about_me.txt</span></p>
+            <div class="about-term__output">
+              <div class="about-term__col">
+                <h2 class="about-term__heading"><span aria-hidden="true">&gt;</span> About Me</h2>
+                <p>DevOps &amp; SecOps engineer with 7+ years running secure Linux and Windows hybrid environments. At Slice Labs I've worn both hats — three years owning IT and security operations (SOC 2 readiness, SIEM monitoring, incident response), then moving to DevOps to manage AWS infrastructure, EKS access control, and CI/CD automation.</p>
+                <h3 class="about-term__heading about-term__heading--gap"><span aria-hidden="true">&gt;</span> Experience Summary</h3>
+                <div class="about-term__stats">
+                  <div class="stat">
+                    <p class="stat__num"><span data-counter data-target="7">7</span>+</p>
+                    <p class="stat__label">Years Experience</p>
+                  </div>
+                  <div class="stat">
+                    <p class="stat__num"><span data-counter data-target="25">25</span>+</p>
+                    <p class="stat__label">Technologies</p>
+                  </div>
+                  <div class="stat">
+                    <p class="stat__num"><span data-counter data-target="2">2</span></p>
+                    <p class="stat__label">Disciplines</p>
+                  </div>
+                </div>
               </div>
-              <div class="stat">
-                <p class="stat__num"><span data-counter data-target="25">25</span>+</p>
-                <p class="stat__label">Technologies</p>
-              </div>
-              <div class="stat">
-                <p class="stat__num"><span data-counter data-target="2">2</span></p>
-                <p class="stat__label">Disciplines</p>
+              <div class="about-term__col">
+                <h2 class="about-term__heading"><span aria-hidden="true">&gt;</span> What I Focus On</h2>
+                <ul class="focus-list">
+                  <li>
+                    <span class="focus-list__icon" aria-hidden="true">⚙</span>
+                    <div>
+                      <h3>Automation</h3>
+                      <p>Terraform, Jenkins, Bash and Python. If I have to do it twice, I script it.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="focus-list__icon" aria-hidden="true">🛡</span>
+                    <div>
+                      <h3>Security</h3>
+                      <p>IAM, SIEM monitoring, incident response, and SOC 2 readiness — a daily practice, not an audit-week scramble.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="focus-list__icon" aria-hidden="true">📈</span>
+                    <div>
+                      <h3>Reliability</h3>
+                      <p>Monitoring, alerting, and disaster recovery planning. Catch it before users do.</p>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-          <div class="about-card__col about-card__focus">
-            <h2 class="about-card__kicker">What I Focus On</h2>
-            <ul class="focus-list">
-              <li>
-                <span class="focus-list__icon" aria-hidden="true">⚙</span>
-                <div>
-                  <h3>Automation</h3>
-                  <p>Terraform, Jenkins, Bash and Python. If I have to do it twice, I script it.</p>
-                </div>
-              </li>
-              <li>
-                <span class="focus-list__icon" aria-hidden="true">🛡</span>
-                <div>
-                  <h3>Security</h3>
-                  <p>IAM, SIEM monitoring, incident response, and SOC 2 readiness — a daily practice, not an audit-week scramble.</p>
-                </div>
-              </li>
-              <li>
-                <span class="focus-list__icon" aria-hidden="true">📈</span>
-                <div>
-                  <h3>Reliability</h3>
-                  <p>Monitoring, alerting, and disaster recovery planning. Catch it before users do.</p>
-                </div>
-              </li>
-            </ul>
+            <p class="term__line"><span class="term__prompt">cj@localhost:~$</span> <span class="term__cursor" aria-hidden="true"></span></p>
           </div>
         </div>
       </div>
@@ -138,7 +149,7 @@
         <h2 class="section__title reveal"><span class="section__hash" aria-hidden="true">##</span> Technologies &amp; Tools</h2>
         <ul class="tech-grid">
           <li class="tech-grid__item reveal">
-            <span class="tech-grid__mono" aria-hidden="true">AWS</span>
+            <img src="assets/img/logos/aws.svg" alt="" width="35" height="28">
             <span class="tech-grid__label">AWS</span>
           </li>
           <li class="tech-grid__item reveal">

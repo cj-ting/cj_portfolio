@@ -95,21 +95,10 @@
   gap: var(--space-3);
 }
 .tool-strip li { flex: none; }
-.tool-strip img { width: 1.5rem; height: 1.5rem; }
-.tool-strip__mono {
-  display: grid;
-  place-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  font-weight: 700;
-  font-size: 0.6rem;
-  color: #ff9900;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-}
+.tool-strip img { height: 1.5rem; width: auto; }
 @media (max-width: 400px) {
   .tool-strip { gap: var(--space-2); }
-  .tool-strip img, .tool-strip__mono { width: 1.25rem; height: 1.25rem; }
+  .tool-strip img { height: 1.25rem; }
 }
 
 /* ---------- Badges & tags ---------- */
