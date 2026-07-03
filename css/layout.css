@@ -107,7 +107,7 @@
   position: relative;
   overflow: hidden;
   padding-block: var(--space-6);
-  min-height: min(77.4vh, 39.6rem);
+  min-height: min(86vh, 44rem);
   display: flex;
   align-items: center;
 }
