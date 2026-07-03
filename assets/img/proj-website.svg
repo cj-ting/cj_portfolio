@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-hidden="true">
+  <rect width="640" height="360" fill="#0d1512"/>
+  <g stroke="#1e2b28" stroke-width="1">
+    <path d="M0 60h640M0 120h640M0 180h640M0 240h640M0 300h640M80 0v360M160 0v360M240 0v360M320 0v360M400 0v360M480 0v360M560 0v360"/>
+  </g>
+  <g fill="none" stroke="#00d97e" stroke-width="2.5">
+    <rect x="150" y="70" width="340" height="200" rx="12"/>
+    <path d="M150 110h340"/>
+    <circle cx="175" cy="90" r="5"/><circle cx="197" cy="90" r="5"/><circle cx="219" cy="90" r="5"/>
+    <rect x="290" y="160" width="60" height="50" rx="8"/>
+    <path d="M302 160v-14a18 18 0 0 1 36 0v14"/>
+  </g>
+  <circle cx="320" cy="183" r="6" fill="#00d97e"/>
+  <text x="320" y="250" fill="#00d97e" font-family="monospace" font-size="16" text-anchor="middle" opacity=".8">CSP · OIDC · zero deps</text>
+  <text x="320" y="320" fill="#00d97e" font-family="monospace" font-size="20" text-anchor="middle">$ curl -sI https://cj.ops | grep -i security</text>
+</svg>

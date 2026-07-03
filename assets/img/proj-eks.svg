@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-hidden="true">
+  <rect width="640" height="360" fill="#0d1512"/>
+  <g stroke="#1e2b28" stroke-width="1">
+    <path d="M0 60h640M0 120h640M0 180h640M0 240h640M0 300h640M80 0v360M160 0v360M240 0v360M320 0v360M400 0v360M480 0v360M560 0v360"/>
+  </g>
+  <g fill="none" stroke="#00d97e" stroke-width="2.5">
+    <path d="M320 70l70 40v80l-70 40-70-40v-80z"/>
+    <path d="M170 150l45 26v52l-45 26-45-26v-52z" opacity=".6"/>
+    <path d="M470 150l45 26v52l-45 26-45-26v-52z" opacity=".6"/>
+    <path d="M250 176h-35M390 176h35M320 230v-60" opacity=".45"/>
+  </g>
+  <circle cx="320" cy="150" r="6" fill="#00d97e"/>
+  <circle cx="170" cy="202" r="5" fill="#00d97e" opacity=".6"/>
+  <circle cx="470" cy="202" r="5" fill="#00d97e" opacity=".6"/>
+  <text x="320" y="320" fill="#00d97e" font-family="monospace" font-size="20" text-anchor="middle">$ kubectl get nodes --secure</text>
+</svg>

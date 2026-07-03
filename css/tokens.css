@@ -1,0 +1,41 @@
+/* Design tokens — single source of truth for the theme. */
+:root {
+  /* color */
+  --bg: #0a0f0d;
+  --bg-raise: #0d1512;
+  --surface: #101a16;
+  --surface-2: #13201b;
+  --border: #1e2b28;
+  --border-bright: #2c443c;
+  --accent: #00d97e;
+  --accent-strong: #35eb9e;
+  --accent-dim: rgba(0, 217, 126, 0.14);
+  --accent-glow: rgba(0, 217, 126, 0.35);
+  --text: #d6e2dc;
+  --text-strong: #f2f8f5;
+  --muted: #90a29b;
+
+  /* type */
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+  --fs-sm: clamp(0.8rem, 0.78rem + 0.12vw, 0.875rem);
+  --fs-base: clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
+  --fs-md: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  --fs-lg: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  --fs-xl: clamp(2rem, 1.5rem + 2.6vw, 3.6rem);
+
+  /* space & shape */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.75rem;
+  --space-5: 3rem;
+  --space-6: 5rem;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --shadow-glow: 0 0 0 1px var(--border-bright), 0 0 28px var(--accent-dim);
+  --container: 1100px;
+
+  /* motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 500ms;
+}

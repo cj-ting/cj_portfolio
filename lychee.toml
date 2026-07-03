@@ -1,0 +1,11 @@
+# Link checker config.
+exclude = [
+  # Placeholder profile links until CJ fills in real handles.
+  "USERNAME",
+  # LinkedIn blocks bots with 999s.
+  "linkedin\\.com",
+]
+exclude_mail = true
+no_progress = true
+max_retries = 2
+timeout = 20

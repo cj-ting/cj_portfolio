@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-hidden="true">
+  <rect width="640" height="360" fill="#0d1512"/>
+  <g stroke="#1e2b28" stroke-width="1">
+    <path d="M0 60h640M0 120h640M0 180h640M0 240h640M0 300h640M80 0v360M160 0v360M240 0v360M320 0v360M400 0v360M480 0v360M560 0v360"/>
+  </g>
+  <path d="M230 70l90-25 90 25v90c0 65-40 105-90 130-50-25-90-65-90-130z" fill="none" stroke="#00d97e" stroke-width="3"/>
+  <path d="M280 175l30 30 55-60" fill="none" stroke="#00d97e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#00d97e" stroke-width="2.5" opacity=".55" stroke-linecap="round">
+    <path d="M70 110h110M70 150h90M70 190h100"/>
+    <path d="M460 110h110M480 150h90M470 190h100"/>
+  </g>
+  <text x="320" y="320" fill="#00d97e" font-family="monospace" font-size="20" text-anchor="middle">$ audit --framework soc2 --evidence ./</text>
+</svg>

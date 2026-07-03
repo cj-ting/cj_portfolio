@@ -1,0 +1,43 @@
+/* CV page — screen layout + print-to-PDF styles. */
+.cv {
+  max-width: 52rem;
+  margin-inline: auto;
+  padding: var(--space-5) var(--space-4);
+}
+.cv header { margin-bottom: var(--space-5); border-bottom: 1px solid var(--border); padding-bottom: var(--space-4); }
+.cv h1 { font-size: var(--fs-lg); }
+.cv .cv__role { color: var(--accent); font-weight: 700; margin-top: var(--space-1); }
+.cv .cv__meta { color: var(--muted); font-size: var(--fs-sm); margin-top: var(--space-2); }
+.cv h2 {
+  font-size: var(--fs-md);
+  color: var(--accent);
+  margin: var(--space-5) 0 var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.cv h3 { font-size: var(--fs-base); }
+.cv .cv__where { color: var(--muted); font-size: var(--fs-sm); margin-bottom: var(--space-2); }
+.cv ul { padding-left: 1.2rem; }
+.cv li { margin-bottom: var(--space-2); font-size: var(--fs-sm); }
+.cv li::marker { color: var(--accent); }
+.cv .cv__job + .cv__job { margin-top: var(--space-4); }
+.cv .cv__actions { margin-top: var(--space-5); display: flex; gap: var(--space-3); }
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --bg-raise: #ffffff;
+    --surface: #ffffff;
+    --border: #cccccc;
+    --accent: #067a4b;
+    --accent-strong: #067a4b;
+    --text: #1a1a1a;
+    --text-strong: #000000;
+    --muted: #444444;
+  }
+  html { color-scheme: light; }
+  body { font-size: 10.5pt; }
+  .cv { padding: 0; max-width: none; }
+  .cv .cv__actions, .site-header { display: none; }
+  a { color: var(--text); text-decoration: none; }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-hidden="true">
+  <rect width="640" height="360" fill="#0d1512"/>
+  <g stroke="#1e2b28" stroke-width="1">
+    <path d="M0 60h640M0 120h640M0 180h640M0 240h640M0 300h640M80 0v360M160 0v360M240 0v360M320 0v360M400 0v360M480 0v360M560 0v360"/>
+  </g>
+  <g fill="none" stroke="#00d97e" stroke-width="2.5">
+    <rect x="60" y="140" width="90" height="70" rx="10"/>
+    <rect x="200" y="140" width="90" height="70" rx="10"/>
+    <rect x="340" y="140" width="90" height="70" rx="10"/>
+    <rect x="480" y="140" width="90" height="70" rx="10"/>
+    <path d="M150 175h50m-14-9l14 9-14 9" opacity=".7"/>
+    <path d="M290 175h50m-14-9l14 9-14 9" opacity=".7"/>
+    <path d="M430 175h50m-14-9l14 9-14 9" opacity=".7"/>
+  </g>
+  <g fill="#00d97e" font-family="monospace" font-size="17" text-anchor="middle">
+    <text x="105" y="182">build</text>
+    <text x="245" y="182">test</text>
+    <text x="385" y="182">scan</text>
+    <text x="525" y="182">deploy</text>
+  </g>
+  <text x="320" y="90" fill="#00d97e" font-family="monospace" font-size="20" text-anchor="middle" opacity=".8">jenkins × terraform × docker</text>
+  <text x="320" y="320" fill="#00d97e" font-family="monospace" font-size="20" text-anchor="middle">$ terraform apply -auto-approve=false</text>
+</svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Nothing is hidden here — this file is not an access control.

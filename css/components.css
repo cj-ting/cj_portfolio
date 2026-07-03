@@ -1,0 +1,142 @@
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 180ms var(--ease), box-shadow 180ms var(--ease), background 180ms var(--ease);
+}
+.btn--solid { background: var(--accent); color: var(--bg); }
+.btn--solid:hover { background: var(--accent-strong); color: var(--bg); box-shadow: 0 0 24px var(--accent-glow); transform: translateY(-2px); }
+.btn--ghost { border-color: var(--border-bright); color: var(--text); }
+.btn--ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+/* ---------- Terminal chrome ---------- */
+.term {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+.term__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.term__dot { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--border-bright); }
+.term__dot:first-child { background: #e05252; }
+.term__dot:nth-child(2) { background: #d9a441; }
+.term__dot:nth-child(3) { background: var(--accent); }
+.term__title { margin-left: var(--space-2); color: var(--muted); font-size: var(--fs-sm); }
+.term__body { padding: var(--space-3) var(--space-4); font-size: var(--fs-sm); }
+.term__prompt { color: var(--accent); font-weight: 700; }
+.term__cmd { color: var(--text-strong); }
+.term__out { color: var(--muted); margin-bottom: var(--space-2); }
+.term__cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 1.1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.term--frame { box-shadow: var(--shadow-glow), 0 12px 40px rgba(0, 0, 0, 0.45); }
+.term--frame img { width: 100%; }
+
+/* ---------- Cards ---------- */
+.card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  transition: border-color 200ms var(--ease), box-shadow 200ms var(--ease), transform 200ms var(--ease);
+  transform: perspective(800px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+}
+.card:hover { border-color: var(--border-bright); box-shadow: var(--shadow-glow); }
+.card h3 { font-size: var(--fs-md); margin-block: var(--space-2); }
+.card p { color: var(--muted); font-size: var(--fs-sm); }
+.card__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: var(--radius);
+  background: var(--accent-dim);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* ---------- Badges & tags ---------- */
+.skills__heading { font-size: var(--fs-sm); color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-3); }
+.badges { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.badges li {
+  padding: 0.35rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  transition: border-color 160ms var(--ease), color 160ms var(--ease);
+}
+.badges li:hover { border-color: var(--accent); color: var(--accent-strong); }
+.tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-3); }
+.tags li {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--accent-dim);
+  color: var(--accent-strong);
+  font-size: 0.75rem;
+}
+
+/* ---------- Projects ---------- */
+.project { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.project__thumb { width: 100%; border-bottom: 1px solid var(--border); }
+.project__body { padding: var(--space-4); display: flex; flex-direction: column; flex: 1; }
+.project__link { margin-top: auto; padding-top: var(--space-3); font-size: var(--fs-sm); font-weight: 700; text-decoration: none; }
+.project__link:hover { text-decoration: underline; }
+
+/* ---------- Terminal dialog (easter egg) ---------- */
+.termdialog {
+  margin: auto; /* restore centering removed by the global reset */
+  width: min(92vw, 40rem);
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.termdialog::backdrop { background: rgba(4, 8, 6, 0.75); backdrop-filter: blur(3px); }
+.term--dialog { box-shadow: var(--shadow-glow), 0 24px 60px rgba(0, 0, 0, 0.6); }
+.termdialog__close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 var(--space-2);
+}
+.termdialog__close:hover { color: var(--accent); }
+.termdialog__body { min-height: 16rem; max-height: 60vh; display: flex; flex-direction: column; }
+.termdialog__log { flex: 1; overflow-y: auto; white-space: pre-wrap; color: var(--text); }
+.termdialog__log .muted { color: var(--muted); }
+.termdialog__log .ok { color: var(--accent); }
+.termdialog__row { display: flex; gap: var(--space-2); align-items: center; margin-top: var(--space-2); }
+.termdialog__input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-strong);
+  caret-color: var(--accent);
+}
+.termdialog__input:focus { outline: none; }
+.termdialog__input::placeholder { color: var(--muted); opacity: 0.7; }

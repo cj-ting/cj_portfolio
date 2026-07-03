@@ -1,0 +1,13 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+
+# Never allow tooling caches into the repo — this site has zero dependencies.
+node_modules/
+.lighthouseci/
+
+# Defensive: personal documents must never land in this repo.
+# The resume sources live OUTSIDE this repo root on purpose.
+*.docx
+CoverLetter*
