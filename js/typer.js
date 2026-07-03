@@ -44,12 +44,26 @@ async function runGroup(nodes) {
 
 // A [data-type-trigger] container's typed lines run once when it scrolls
 // into view (below-the-fold terminals), hiding its output until the typed
-// command finishes so the file content doesn't just appear mid-type.
+// command finishes — then the rest (e.g. a "cat"-ed paragraph) types out
+// visibly in place, like real command output streaming in.
 async function runTrigger(container) {
+  const nodes = [...container.querySelectorAll("[data-type], [data-type-out]")];
+  if (!nodes.length) return;
+  const jobs = nodes.map((el) => ({
+    ...prepare(el),
+    delay: el.hasAttribute("data-type") ? CMD_DELAY : OUT_DELAY,
+  }));
+
   container.classList.add("is-typing");
-  await runGroup(container.querySelectorAll("[data-type], [data-type-out]"));
+  await typeInto(jobs[0].anim, jobs[0].text, jobs[0].delay);
   container.classList.remove("is-typing");
   container.classList.add("is-typed");
+  await new Promise((r) => setTimeout(r, PAUSE));
+
+  for (const job of jobs.slice(1)) {
+    await typeInto(job.anim, job.text, job.delay);
+    await new Promise((r) => setTimeout(r, PAUSE));
+  }
 }
 
 export function init() {
