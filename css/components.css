@@ -77,6 +77,29 @@
   color: var(--accent);
   font-size: 1.2rem;
 }
+.card__link {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-decoration: none;
+}
+.card__link:hover { text-decoration: underline; }
+
+/* ---------- Tool strip ---------- */
+.tool-strip { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+.tool-strip img { width: 1.5rem; height: 1.5rem; }
+.tool-strip__mono {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: 700;
+  font-size: 0.6rem;
+  color: #ff9900;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+}
 
 /* ---------- Badges & tags ---------- */
 .skills__heading { font-size: var(--fs-sm); color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-3); }
@@ -101,7 +124,20 @@
 
 /* ---------- Projects ---------- */
 .project { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.project__thumb-wrap { position: relative; }
 .project__thumb { width: 100%; border-bottom: 1px solid var(--border); }
+.project__tag {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--border-bright);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
 .project__body { padding: var(--space-4); display: flex; flex-direction: column; flex: 1; }
 .project__link { margin-top: auto; padding-top: var(--space-3); font-size: var(--fs-sm); font-weight: 700; text-decoration: none; }
 .project__link:hover { text-decoration: underline; }

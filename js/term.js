@@ -26,12 +26,10 @@ const COMMANDS = {
     ["", "1. Secure EKS Infrastructure & Access Control"],
     ["", "2. CI/CD Pipeline Automation (Jenkins + Terraform + Docker)"],
     ["", "3. SOC 2 Readiness & Security Operations"],
-    ["", "4. Observability with DataDog & Splunk"],
-    ["", "5. This website (view source — it's hand-written)"],
     ["muted", "scroll to #projects for details"],
   ],
   contact: () => [
-    ["", "email:    hover the 'Email Me' button — it assembles itself"],
+    ["", "email:    hover 'Get In Touch' below — it assembles itself"],
     ["", "linkedin: see the contact section"],
     ["muted", "no phone number here. OPSEC."],
   ],
