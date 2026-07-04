@@ -192,6 +192,10 @@
 
 /* ---------- About terminal ---------- */
 .about { position: relative; overflow: hidden; }
+/* Translucent so the particle canvas behind the section shows through
+   instead of being fully hidden behind the terminal chrome. */
+.term.about-term { background: color-mix(in srgb, var(--surface) 55%, transparent); }
+.term.about-term .term__bar { background: color-mix(in srgb, var(--surface-2) 55%, transparent); }
 .about__canvas {
   position: absolute;
   inset: 0;
