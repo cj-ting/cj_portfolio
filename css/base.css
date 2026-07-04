@@ -82,13 +82,15 @@ html { scroll-padding-top: 5rem; }
 /*
  * Scroll-reveal gating: content is fully visible by default (the no-JS floor).
  * Only when JS has loaded (html.js-enabled) do reveal elements start hidden.
+ * Uses the standalone `translate` property (not `transform`) so it never
+ * collides with a component's own hover transform (e.g. a magnify effect).
  */
 .js-enabled .reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+  translate: 0 22px;
+  transition: opacity var(--dur) var(--ease), translate var(--dur) var(--ease);
 }
-.js-enabled .reveal.is-visible { opacity: 1; transform: none; }
+.js-enabled .reveal.is-visible { opacity: 1; translate: none; }
 
 /* Global kill switch: reduced motion disables every animation and transition. */
 @media (prefers-reduced-motion: reduce) {
@@ -97,5 +99,5 @@ html { scroll-padding-top: 5rem; }
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .js-enabled .reveal { opacity: 1; transform: none; }
+  .js-enabled .reveal { opacity: 1; translate: none; }
 }
