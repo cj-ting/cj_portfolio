@@ -191,6 +191,16 @@
 .stat__label { color: var(--muted); font-size: var(--fs-sm); margin-top: var(--space-2); }
 
 /* ---------- About terminal ---------- */
+.about { position: relative; overflow: hidden; }
+.about__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.about > .container { position: relative; z-index: 1; }
 .term__body.about-term__body { padding: var(--space-4) var(--space-5) var(--space-5); }
 .about-term__output {
   display: grid;
