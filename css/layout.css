@@ -266,23 +266,35 @@
 }
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fit, minmax(5.5rem, 1fr));
+  gap: var(--space-2);
 }
 .tech-grid__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-4) var(--space-2);
+  padding: var(--space-3) var(--space-2);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   text-align: center;
   transition: border-color 200ms var(--ease), transform 200ms var(--ease);
 }
-.tech-grid__item:hover { border-color: var(--border-bright); transform: translateY(-2px); }
-.tech-grid__item img { height: 2rem; width: auto; }
+.tech-grid__item:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-2px);
+  z-index: 2;
+}
+/* macOS-dock-style magnify: the icon itself scales up from its base,
+   growing upward so it clears the label instead of covering it. */
+.tech-grid__item img {
+  height: 1.5rem;
+  width: auto;
+  transform-origin: center bottom;
+  transition: transform 240ms var(--ease);
+}
+.tech-grid__item:hover img { transform: scale(2.1); }
 .tech-grid__label { font-size: var(--fs-sm); color: var(--text); }
 
 /* ---------- Contact ---------- */
