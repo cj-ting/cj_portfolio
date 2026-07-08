@@ -4,8 +4,10 @@ exclude = [
   "USERNAME",
   # LinkedIn blocks bots with 999s.
   "linkedin\\.com",
+  # Site's own production URL — 404s until the first Pages deploy succeeds,
+  # so checking it here is a chicken-and-egg failure on the very first run.
+  "cj-ting\\.github\\.io/cj_portfolio",
 ]
-exclude_mail = true
 no_progress = true
 max_retries = 2
 timeout = 20
