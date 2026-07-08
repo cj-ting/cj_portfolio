@@ -6,8 +6,12 @@
 // error. Raising keepAliveTimeout avoids that.
 import http from "node:http";
 import handler from "serve-handler";
+import compress from "compression";
 
-const server = http.createServer((req, res) => handler(req, res, { public: process.argv[2] || "." }));
+const gzip = compress();
+const server = http.createServer((req, res) => {
+  gzip(req, res, () => handler(req, res, { public: process.argv[2] || "." }));
+});
 server.keepAliveTimeout = 120_000;
 server.headersTimeout = 121_000; // must exceed keepAliveTimeout (Node requirement)
 
