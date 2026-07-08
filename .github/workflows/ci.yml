@@ -63,9 +63,9 @@ jobs:
           # whole run. Stay on localhost: Chrome treats it as a secure context
           # even over plain HTTP (the is-on-https audit exempts it), which a
           # real-looking hostname over HTTP would not get.
-          npm install --no-save serve-handler
+          npm install --no-save serve-handler compression
           node .github/scripts/serve-for-ci.mjs . 8080 &
-          npx --yes wait-on@8 http://localhost:8080/
+          npx --yes wait-on@8 --timeout 30000 http://localhost:8080/
       - name: Lighthouse CI
         uses: treosh/lighthouse-ci-action@3e7e23fb74242897f95c0ba9cabad3d0227b9b18 # 12.6.2
         with:
