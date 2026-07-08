@@ -1,7 +1,6 @@
 # RFC 9116 security contact for this site.
-# TODO(cj): replace USERNAME with your LinkedIn handle.
 Contact: https://github.com/cj-ting/cj_portfolio/security/advisories/new
-Contact: https://www.linkedin.com/in/USERNAME
+Contact: https://www.linkedin.com/in/christopher-ting-51550a16
 Expires: 2027-07-01T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://cj-ting.github.io/cj_portfolio/.well-known/security.txt
