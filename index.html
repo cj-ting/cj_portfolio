@@ -28,7 +28,7 @@
 
   <header class="site-header">
     <nav class="nav container" aria-label="Main">
-      <a class="nav__brand" href="#home"><span class="nav__brand-glyph" aria-hidden="true">&gt;_</span> cj-ops</a>
+      <a class="nav__brand" href="#home"><span class="nav__brand-glyph" aria-hidden="true">&gt;_</span> <span class="nav__brand-name">cj-ops</span><span class="nav__brand-cursor" aria-hidden="true"></span></a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span class="nav__toggle-bar" aria-hidden="true"></span>
         <span class="visually-hidden">Menu</span>
@@ -39,7 +39,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a class="btn btn--ghost nav__cv" href="cv.html">View CV</a></li>
+        <li><a class="btn btn--ghost nav__cta" href="#contact">Let's Connect <span aria-hidden="true">→</span></a></li>
       </ul>
     </nav>
   </header>
@@ -48,88 +48,98 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
-      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__photo">
+        <picture>
+          <source type="image/webp" srcset="assets/img/hero-960.webp 960w, assets/img/hero-1536.webp 1536w" sizes="100vw">
+          <img src="assets/img/hero-1536.webp" alt="Christopher Ting working at a laptop in a dark, terminal-lit workspace" width="1536" height="890" fetchpriority="high">
+        </picture>
+      </div>
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="hero__kicker">// Ottawa, Canada</p>
-          <div class="term" aria-hidden="false">
-            <div class="term__bar"><span class="term__dot"></span><span class="term__dot"></span><span class="term__dot"></span><span class="term__title">cj@ops:~</span></div>
-            <div class="term__body">
-              <p class="term__line"><span class="term__prompt">$</span> <span class="term__cmd" data-type>whoami</span></p>
-              <p class="term__out" data-type-out>Christopher Ting</p>
-              <p class="term__line"><span class="term__prompt">$</span> <span class="term__cmd" data-type>cat role.txt</span></p>
-              <p class="term__out" data-type-out>Systems Administrator · Hybrid Infrastructure · DevOps / SecOps</p>
-              <p class="term__line"><span class="term__prompt">$</span> <span class="term__cursor" aria-hidden="true"></span></p>
-            </div>
-          </div>
-          <h1 class="hero__title">Secure. Automated. <span class="accent">Observable.</span></h1>
-          <p class="hero__sub">7+ years keeping Linux and Windows hybrid environments secure, automated, and observable — currently DevOps Engineer at Slice Labs, Ottawa.</p>
+          <p class="hero__kicker" data-type>Hello, I'm</p>
+          <h1 class="hero__title" data-type>CJ Ting</h1>
+          <p class="hero__role" data-type-rich><span class="accent">DevOps</span> &amp; <span class="accent">SecOps</span> Engineer</p>
+          <p class="hero__sub" data-type-out>7+ years of hands-on experience supporting secure Linux and Windows environments — three years owning IT and security operations, then moving to DevOps to manage AWS infrastructure, EKS access control, and CI/CD automation. I like infrastructure that is boring in the best way: patched, monitored, documented, and recoverable.</p>
           <div class="hero__cta">
-            <a class="btn btn--solid" href="#projects">View My Work</a>
-            <a class="btn btn--ghost" href="cv.html">View CV <span aria-hidden="true">→</span></a>
+            <a class="btn btn--solid" href="#projects">View My Work <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="cv.html">Download CV <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero__trust">
+            <p class="hero__trust-label">TRUSTED BY TOOLS I USE</p>
+            <ul class="tool-strip">
+              <li><img src="assets/img/logos/aws.svg" alt="AWS" width="30" height="24"></li>
+              <li><img src="assets/img/logos/terraform.svg" alt="Terraform" width="24" height="24"></li>
+              <li><img src="assets/img/logos/kubernetes.svg" alt="Kubernetes" width="24" height="24"></li>
+              <li><img src="assets/img/logos/docker.svg" alt="Docker" width="24" height="24"></li>
+              <li><img src="assets/img/logos/jenkins.svg" alt="Jenkins" width="24" height="24"></li>
+              <li><img src="assets/img/logos/github.svg" alt="GitHub" width="24" height="24"></li>
+            </ul>
           </div>
         </div>
-        <div class="hero__media">
-          <figure class="term term--frame">
-            <div class="term__bar"><span class="term__dot"></span><span class="term__dot"></span><span class="term__dot"></span><span class="term__title">hero.png</span></div>
-            <picture>
-              <source type="image/webp" srcset="assets/img/hero-480.webp 480w, assets/img/hero-960.webp 960w" sizes="(min-width: 900px) 480px, 92vw">
-              <img src="assets/img/hero-960.jpg" alt="Christopher Ting working at a laptop in a dark terminal-lit workspace" width="960" height="640" fetchpriority="high">
-            </picture>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ STATS ============ -->
-    <section class="stats" aria-label="Career statistics">
-      <div class="container stats__grid">
-        <div class="stat reveal">
-          <p class="stat__num"><span data-counter data-target="7">7</span>+</p>
-          <p class="stat__label">Years in IT operations</p>
-        </div>
-        <div class="stat reveal">
-          <p class="stat__num"><span data-counter data-target="25">25</span>+</p>
-          <p class="stat__label">Technologies in the toolbox</p>
-        </div>
-        <div class="stat reveal">
-          <p class="stat__num"><span data-counter data-target="2">2</span></p>
-          <p class="stat__label">Disciplines — DevOps &amp; SecOps</p>
-        </div>
-        <div class="stat reveal">
-          <p class="stat__num"><span data-counter data-target="5">5</span></p>
-          <p class="stat__label">Featured case studies</p>
-        </div>
+        <div class="hero__media" aria-hidden="true"></div>
       </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section class="section" id="about">
+    <section class="section about" id="about">
+      <canvas class="about__canvas" aria-hidden="true"></canvas>
       <div class="container">
-        <h2 class="section__title reveal"><span class="section__hash" aria-hidden="true">##</span> About</h2>
-        <div class="about__grid">
-          <div class="about__text reveal">
-            <p>I'm a systems administrator turned DevOps engineer with 7+ years of hands-on experience running secure Linux and Windows environments. At Slice Labs I've worn both hats — three years owning IT and security operations (SOC 2 readiness, SIEM monitoring, incident response), then moving to DevOps to manage AWS infrastructure, EKS access control, and CI/CD automation.</p>
-            <p>I like infrastructure that is boring in the best way: <strong>patched, monitored, documented, and recoverable</strong>.</p>
-            <p class="about__edu"><span class="accent" aria-hidden="true">▸</span> Computer Systems Technician — Algonquin College, Ottawa</p>
+        <div class="term about-term reveal">
+          <div class="term__bar">
+            <span class="term__dot"></span><span class="term__dot"></span><span class="term__dot"></span>
+            <span class="term__title">cj@localhost:~</span>
           </div>
-          <ul class="focus">
-            <li class="card card--tilt focus__card reveal">
-              <span class="card__icon" aria-hidden="true">⚙</span>
-              <h3>Automation</h3>
-              <p>Terraform, Jenkins, Bash and Python. If I have to do it twice, I script it.</p>
-            </li>
-            <li class="card card--tilt focus__card reveal">
-              <span class="card__icon" aria-hidden="true">🛡</span>
-              <h3>Security</h3>
-              <p>IAM, SIEM monitoring, incident response, and SOC 2 readiness — security as a daily practice, not an audit-week scramble.</p>
-            </li>
-            <li class="card card--tilt focus__card reveal">
-              <span class="card__icon" aria-hidden="true">📈</span>
-              <h3>Reliability</h3>
-              <p>Monitoring, alerting, root-cause analysis, and disaster recovery planning. Catch it before users do.</p>
-            </li>
-          </ul>
+          <div class="term__body about-term__body" data-type-trigger>
+            <p class="term__line"><span class="term__prompt">cj@localhost:~$</span> <span class="term__cmd" data-type>cat about_me.txt</span></p>
+            <div class="about-term__output">
+              <div class="about-term__col">
+                <h2 class="about-term__heading"><span aria-hidden="true">&gt;</span> About Me</h2>
+                <p data-type-out>DevOps &amp; SecOps engineer with 7+ years running secure Linux and Windows hybrid environments. At Slice Labs I've worn both hats — three years owning IT and security operations (SOC 2 readiness, SIEM monitoring, incident response), then moving to DevOps to manage AWS infrastructure, EKS access control, and CI/CD automation.</p>
+                <h3 class="about-term__heading about-term__heading--gap"><span aria-hidden="true">&gt;</span> Experience Summary</h3>
+                <div class="about-term__stats">
+                  <div class="stat">
+                    <p class="stat__num"><span data-counter data-target="7">7</span>+</p>
+                    <p class="stat__label">Years Experience</p>
+                  </div>
+                  <div class="stat">
+                    <p class="stat__num"><span data-counter data-target="25">25</span>+</p>
+                    <p class="stat__label">Technologies</p>
+                  </div>
+                  <div class="stat">
+                    <p class="stat__num"><span data-counter data-target="2">2</span></p>
+                    <p class="stat__label">Disciplines</p>
+                  </div>
+                </div>
+              </div>
+              <div class="about-term__col">
+                <h2 class="about-term__heading"><span aria-hidden="true">&gt;</span> What I Focus On</h2>
+                <ul class="focus-list">
+                  <li>
+                    <span class="focus-list__icon" aria-hidden="true">⚙</span>
+                    <div>
+                      <h3>Automation</h3>
+                      <p>Terraform, Jenkins, Bash and Python. If I have to do it twice, I script it.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="focus-list__icon" aria-hidden="true">🛡</span>
+                    <div>
+                      <h3>Security</h3>
+                      <p>IAM, SIEM monitoring, incident response, and SOC 2 readiness — a daily practice, not an audit-week scramble.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="focus-list__icon" aria-hidden="true">📈</span>
+                    <div>
+                      <h3>Reliability</h3>
+                      <p>Monitoring, alerting, and disaster recovery planning. Catch it before users do.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="term__line"><span class="term__prompt">cj@localhost:~$</span> <span class="term__cursor" aria-hidden="true"></span></p>
+          </div>
         </div>
       </div>
     </section>
@@ -138,36 +148,48 @@
     <section class="section section--alt" id="skills">
       <div class="container">
         <h2 class="section__title reveal"><span class="section__hash" aria-hidden="true">##</span> Technologies &amp; Tools</h2>
-        <div class="skills__grid">
-          <div class="skills__group reveal">
-            <h3 class="skills__heading">Cloud &amp; IaC</h3>
-            <ul class="badges"><li>AWS</li><li>Terraform</li><li>Kubernetes / EKS</li><li>Docker</li><li>IAM</li></ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__heading">Virtualization</h3>
-            <ul class="badges"><li>Proxmox</li><li>VMware</li><li>Hyper-V</li></ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__heading">Operating Systems</h3>
-            <ul class="badges"><li>Red Hat</li><li>Ubuntu</li><li>CentOS</li><li>Windows Server</li><li>macOS</li></ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__heading">CI/CD &amp; Scripting</h3>
-            <ul class="badges"><li>Jenkins</li><li>Git</li><li>Bash</li><li>Python</li><li>Infrastructure as Code</li></ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__heading">Networking &amp; Security</h3>
-            <ul class="badges"><li>DNS / DHCP</li><li>VPN</li><li>Firewalls</li><li>SSL/TLS</li><li>Reverse proxies</li><li>SIEM</li><li>SOC 2</li></ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__heading">Identity &amp; Access</h3>
-            <ul class="badges"><li>Active Directory</li><li>Group Policy</li><li>Okta</li><li>JumpCloud</li><li>Google Workspace</li></ul>
-          </div>
-          <div class="skills__group reveal">
-            <h3 class="skills__heading">Observability</h3>
-            <ul class="badges"><li>DataDog</li><li>Splunk</li><li>Alerting</li><li>Root-cause analysis</li></ul>
-          </div>
-        </div>
+        <ul class="tech-grid">
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/aws.svg" alt="" width="35" height="28">
+            <span class="tech-grid__label">AWS</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/terraform.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">Terraform</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/kubernetes.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">Kubernetes</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/docker.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">Docker</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/jenkins.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">Jenkins</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/github.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">GitHub</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/datadog.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">DataDog</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/splunk.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">Splunk</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/vscode.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">VS Code</span>
+          </li>
+          <li class="tech-grid__item reveal">
+            <img src="assets/img/logos/claude.svg" alt="" width="28" height="28">
+            <span class="tech-grid__label">Claude</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -180,31 +202,19 @@
             <span class="card__icon" aria-hidden="true">☁</span>
             <h3>Cloud Infrastructure</h3>
             <p>Design and manage secure, highly available AWS infrastructure — networking, compute, storage, and IAM.</p>
+            <a class="card__link" href="#projects">Learn more <span aria-hidden="true">→</span></a>
           </div>
           <div class="card card--tilt reveal">
             <span class="card__icon" aria-hidden="true">🔁</span>
-            <h3>CI/CD Engineering</h3>
+            <h3>CI/CD Automation</h3>
             <p>Automated build and deployment pipelines with Jenkins, Terraform, and Docker — repeatable and auditable.</p>
+            <a class="card__link" href="#projects">Learn more <span aria-hidden="true">→</span></a>
           </div>
           <div class="card card--tilt reveal">
             <span class="card__icon" aria-hidden="true">🔐</span>
-            <h3>Security Operations</h3>
-            <p>SIEM monitoring, incident response, penetration-test coordination, and SOC 2 readiness activities.</p>
-          </div>
-          <div class="card card--tilt reveal">
-            <span class="card__icon" aria-hidden="true">📟</span>
-            <h3>Monitoring &amp; Response</h3>
-            <p>Proactive alerting and troubleshooting with DataDog and Splunk, plus backup and disaster recovery planning.</p>
-          </div>
-          <div class="card card--tilt reveal">
-            <span class="card__icon" aria-hidden="true">🪪</span>
-            <h3>Identity &amp; Access</h3>
-            <p>User lifecycle and access control across Active Directory, Okta, JumpCloud, and Google Workspace.</p>
-          </div>
-          <div class="card card--tilt reveal">
-            <span class="card__icon" aria-hidden="true">🖥</span>
-            <h3>Systems Administration</h3>
-            <p>Linux and Windows server administration, patching, hardening, and endpoint management at fleet scale.</p>
+            <h3>Security &amp; Compliance</h3>
+            <p>SIEM monitoring, incident response, and SOC 2 readiness — policy, controls, and audit evidence.</p>
+            <a class="card__link" href="#projects">Learn more <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
@@ -213,49 +223,43 @@
     <!-- ============ PROJECTS ============ -->
     <section class="section section--alt" id="projects">
       <div class="container">
-        <h2 class="section__title reveal"><span class="section__hash" aria-hidden="true">##</span> Featured Work</h2>
+        <h2 class="section__title reveal"><span class="section__hash" aria-hidden="true">##</span> Featured Projects</h2>
         <p class="section__lede reveal">Case studies from real production work. No inflated numbers — just what I actually run.</p>
         <div class="projects__grid">
           <article class="card card--tilt project reveal">
-            <img class="project__thumb" src="assets/img/proj-eks.svg" alt="" width="640" height="360" loading="lazy">
+            <div class="project__thumb-wrap">
+              <span class="project__tag">AWS + Terraform</span>
+              <img class="project__thumb" src="assets/img/proj-eks.svg" alt="" width="640" height="360" loading="lazy">
+            </div>
             <div class="project__body">
               <h3>Secure EKS Infrastructure &amp; Access Control</h3>
-              <p>Manage AWS cloud infrastructure with high availability and security as first-class requirements: IAM-based access control and resource allocation for containerized workloads on Amazon EKS, alongside firewall, VPN, and encryption management.</p>
+              <p>IAM-based access control and resource allocation for containerized workloads on Amazon EKS, alongside firewall, VPN, and encryption management.</p>
               <ul class="tags"><li>AWS</li><li>EKS</li><li>IAM</li><li>Kubernetes</li></ul>
+              <a class="project__link" href="cv.html">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
           <article class="card card--tilt project reveal">
-            <img class="project__thumb" src="assets/img/proj-cicd.svg" alt="" width="640" height="360" loading="lazy">
+            <div class="project__thumb-wrap">
+              <span class="project__tag">Jenkins + Docker</span>
+              <img class="project__thumb" src="assets/img/proj-cicd.svg" alt="" width="640" height="360" loading="lazy">
+            </div>
             <div class="project__body">
               <h3>CI/CD Pipeline Automation</h3>
-              <p>Automated CI/CD pipelines using Jenkins, Terraform, and Docker to standardize and secure deployment workflows — infrastructure as code and containerized builds make changes repeatable and auditable.</p>
+              <p>Automated CI/CD pipelines using Jenkins, Terraform, and Docker to standardize and secure deployment workflows.</p>
               <ul class="tags"><li>Jenkins</li><li>Terraform</li><li>Docker</li><li>Git</li></ul>
+              <a class="project__link" href="cv.html">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
           <article class="card card--tilt project reveal">
-            <img class="project__thumb" src="assets/img/proj-soc2.svg" alt="" width="640" height="360" loading="lazy">
+            <div class="project__thumb-wrap">
+              <span class="project__tag">SOC 2 + SIEM</span>
+              <img class="project__thumb" src="assets/img/proj-soc2.svg" alt="" width="640" height="360" loading="lazy">
+            </div>
             <div class="project__body">
               <h3>SOC 2 Readiness &amp; Security Operations</h3>
-              <p>Drove SOC 2 readiness — policy and control review, audit evidence collection — while running day-to-day security operations: SIEM alert triage, incident response, and penetration-test coordination with remediation planning.</p>
+              <p>Drove SOC 2 readiness — policy and control review, audit evidence collection — while running day-to-day SIEM alert triage and incident response.</p>
               <ul class="tags"><li>SOC 2</li><li>SIEM</li><li>Incident Response</li><li>Pen Testing</li></ul>
-            </div>
-          </article>
-          <article class="card card--tilt project reveal">
-            <img class="project__thumb" src="assets/img/proj-observability.svg" alt="" width="640" height="360" loading="lazy">
-            <div class="project__body">
-              <h3>Observability with DataDog &amp; Splunk</h3>
-              <p>Monitoring and troubleshooting practice across cloud and hybrid environments: proactive alerting and root-cause analysis that catch issues before users do and feed back into deployment reliability.</p>
-              <ul class="tags"><li>DataDog</li><li>Splunk</li><li>Alerting</li><li>RCA</li></ul>
-            </div>
-          </article>
-          <article class="card card--tilt project reveal">
-            <img class="project__thumb" src="assets/img/proj-website.svg" alt="" width="640" height="360" loading="lazy">
-            <div class="project__body">
-              <h3>This Website</h3>
-              <p>Hand-coded static site with a hardened GitHub Actions pipeline — HTML validation, link checking, Lighthouse CI, and workflow security auditing — deployed to GitHub Pages via OIDC. Zero runtime dependencies, strict CSP, no trackers.</p>
-              <ul class="tags"><li>GitHub Actions</li><li>CSP</li><li>Lighthouse</li><li>OIDC</li></ul>
-
-              <a class="project__link" href="https://github.com/cj-ting/cj_portfolio" rel="noopener noreferrer">Source on GitHub <span aria-hidden="true">→</span></a>
+              <a class="project__link" href="cv.html">View Project <span aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>
@@ -264,14 +268,20 @@
 
     <!-- ============ CONTACT ============ -->
     <section class="section contact" id="contact">
-      <div class="container contact__inner reveal">
-        <h2 class="section__title"><span class="section__hash" aria-hidden="true">##</span> Let's Talk</h2>
-        <p class="contact__lede">Open to systems administration, DevOps, and SecOps roles — Ottawa or remote.</p>
-        <div class="contact__actions">
+      <div class="container">
+        <h2 class="section__title reveal"><span class="section__hash" aria-hidden="true">##</span> Contact</h2>
+        <div class="cta-bar reveal">
+          <span class="cta-bar__icon" aria-hidden="true">✈</span>
+          <div class="cta-bar__text">
+            <h3>Let's build something great together!</h3>
+            <p>Open to DevOps and SecOps roles — Ottawa or remote.</p>
+          </div>
           <!-- Email assembled at runtime from data parts; no address in source. -->
-          <a class="btn btn--solid" href="#contact" data-email data-u="sennahojrehpotsirhc" data-d="moc.liamg">Email Me</a>
-          <!-- TODO(cj): replace USERNAME with your LinkedIn handle -->
-          <a class="btn btn--ghost" href="https://www.linkedin.com/in/USERNAME" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn--solid cta-bar__btn" href="#contact" data-email data-u="sennahojrehpotsirhc" data-d="moc.liamg">Get In Touch <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="contact__links">
+          
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/christopher-ting-51550a16" rel="noopener noreferrer">LinkedIn</a>
           <a class="btn btn--ghost" href="https://github.com/cj-ting" rel="noopener noreferrer">GitHub</a>
         </div>
         <noscript><p class="contact__noscript">Email: christopherjohannes [at] gmail [dot] com</p></noscript>

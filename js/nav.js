@@ -18,7 +18,7 @@ export function init() {
 
   // Highlight the nav link for the section in view.
   const links = new Map(
-    [...document.querySelectorAll('.nav__menu a[href^="#"]')].map((a) => [
+    [...document.querySelectorAll('.nav__menu a[href^="#"]:not(.btn)')].map((a) => [
       a.getAttribute("href").slice(1),
       a,
     ])

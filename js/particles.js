@@ -1,14 +1,14 @@
 import { reducedMotion, onMotionChange } from "./motion.js";
 
-// Canvas particle field behind the hero: sparse drifting dots with
-// connecting lines. Skipped entirely under reduced motion (CSS gradient
-// fallback remains), paused when the tab is hidden.
+// Canvas particle field behind the About section: sparse drifting dots
+// with connecting lines. Skipped entirely under reduced motion, paused
+// when the tab is hidden.
 const DENSITY = 1 / 22000; // particles per px²
 const MAX_PARTICLES = 90;
 const LINK_DIST = 130;
 
 export function init() {
-  const canvas = document.querySelector(".hero__canvas");
+  const canvas = document.querySelector(".about__canvas");
   if (!canvas || reducedMotion()) return;
 
   const ctx = canvas.getContext("2d");
