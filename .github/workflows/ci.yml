@@ -88,6 +88,47 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  docker-build:
+    # Containerized delivery is a showcase, not the deploy path -- GitHub
+    # Pages only serves static files, so this never gates `deploy` below.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - name: Build image
+        run: docker build -t cj-portfolio:ci .
+      - name: Scan image (report HIGH + CRITICAL)
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: cj-portfolio:ci
+          severity: HIGH,CRITICAL
+          exit-code: "0"
+      - name: Scan image (fail on CRITICAL)
+        # HIGH is reported but not gated on: base-image CVEs regularly lag
+        # their upstream fix by days/weeks and aren't actionable here, so
+        # gating on them would make this job flaky for reasons unrelated to
+        # this repo's own code. CRITICAL still fails the job.
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: cj-portfolio:ci
+          severity: CRITICAL
+          exit-code: "1"
+      - name: Push image to GHCR
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        env:
+          GHCR_ACTOR: ${{ github.actor }}
+          IMAGE_SHA_TAG: ghcr.io/cj-ting/cj_portfolio:${{ github.sha }}
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GHCR_ACTOR" --password-stdin
+          docker tag cj-portfolio:ci ghcr.io/cj-ting/cj_portfolio:latest
+          docker tag cj-portfolio:ci "$IMAGE_SHA_TAG"
+          docker push ghcr.io/cj-ting/cj_portfolio:latest
+          docker push "$IMAGE_SHA_TAG"
+
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs: [html-validate, link-check, lighthouse, security-lint]

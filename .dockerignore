@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+*.md
+LICENSE
+.htmlvalidate.json
+lychee.toml
+lighthouserc.json
+Dockerfile
+.dockerignore
