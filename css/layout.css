@@ -293,6 +293,40 @@
 .tech-grid__item img { height: 1.05rem; width: auto; }
 .tech-grid__label { font-size: var(--fs-sm); color: var(--text); }
 
+/* Roaming spotlight: each tile takes a 1s turn (10 tiles = 10s loop) —
+   the tile swells and glows while its logo does one Y-axis flip.
+   Deliberately animates `scale` + `filter` (not transform/box-shadow/
+   border-color) so the :hover dock-magnify above still composes instead
+   of being overridden for the whole animation duration. */
+@media (prefers-reduced-motion: no-preference) {
+  .tech-grid__item {
+    animation: tech-roam 10s linear infinite;
+    animation-delay: calc(var(--i, 0) * 1s);
+  }
+  .tech-grid__item img {
+    animation: tech-flip 10s linear infinite;
+    animation-delay: calc(var(--i, 0) * 1s);
+  }
+  .tech-grid__item:nth-child(2) { --i: 1; }
+  .tech-grid__item:nth-child(3) { --i: 2; }
+  .tech-grid__item:nth-child(4) { --i: 3; }
+  .tech-grid__item:nth-child(5) { --i: 4; }
+  .tech-grid__item:nth-child(6) { --i: 5; }
+  .tech-grid__item:nth-child(7) { --i: 6; }
+  .tech-grid__item:nth-child(8) { --i: 7; }
+  .tech-grid__item:nth-child(9) { --i: 8; }
+  .tech-grid__item:nth-child(10) { --i: 9; }
+}
+@keyframes tech-roam {
+  /* z-index works here because the tiles are grid items. */
+  0%, 10%, 100% { scale: 1; filter: none; z-index: 0; }
+  5% { scale: 1.22; filter: drop-shadow(0 0 14px var(--accent-glow)); z-index: 1; }
+}
+@keyframes tech-flip {
+  0% { transform: rotateY(0turn); }
+  10%, 100% { transform: rotateY(1turn); }
+}
+
 /* ---------- Contact ---------- */
 .cta-bar {
   display: flex;
